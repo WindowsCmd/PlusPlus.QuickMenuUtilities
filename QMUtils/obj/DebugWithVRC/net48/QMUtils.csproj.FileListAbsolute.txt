@@ -1,0 +1,33 @@
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\QMUtils.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\QMUtils.pdb
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\VRCSDKBase.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\DataModel.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\Photon-DotNet.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\Transmtn.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\Facepunch.Steamworks.Win64.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\VRCSDK3.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\VRCSDK3A.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\DOTween.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\Assembly-CSharp-firstpass.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\VRCSDK2.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\UniTask.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\Rug.Osc.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\VRC.Udon.Common.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\Oculus.VR.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\AVProVideo.Runtime.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\VRC.Udon.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\VRC.Udon.Security.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\Iced.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\websocket-sharp.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\VRC.Udon.Serialization.OdinSerializer.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\bin\DebugWithVRC\net48\VRC.Udon.ClientBindings.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\obj\DebugWithVRC\net48\QMUtils.csproj.AssemblyReference.cache
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\obj\DebugWithVRC\net48\QMUtils.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\obj\DebugWithVRC\net48\QMUtils.AssemblyInfoInputs.cache
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\obj\DebugWithVRC\net48\QMUtils.AssemblyInfo.cs
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\obj\DebugWithVRC\net48\QMUtils.csproj.CoreCompileInputs.cache
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\obj\DebugWithVRC\net48\QMUtils.csproj.CopyComplete
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\obj\DebugWithVRC\net48\QMUtils.dll
+C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\QMUtils\obj\DebugWithVRC\net48\QMUtils.pdb
+C:\Program Files (x86)\Steam\steamapps\common\VRChat\Mods\DebugWithVRC\net48\QMUtils.dll
+C:\Program Files (x86)\Steam\steamapps\common\VRChat\Mods\DebugWithVRC\net48\QMUtils.pdb
