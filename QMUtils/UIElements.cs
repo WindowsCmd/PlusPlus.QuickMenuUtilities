@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.UI;
 using VRC.UI.Elements;
 using MelonLoader;
 
@@ -16,7 +12,9 @@ namespace QMUtils
         public static GameObject quickMenuBase;
         public static GameObject menuTabBase;
 
-        public static MenuStateController getMenuController() => UnityEngine.Resources.FindObjectsOfTypeAll<QuickMenu>().FirstOrDefault<QuickMenu>().gameObject.GetComponent<MenuStateController>();
+        public static MenuStateController getMenuController() {
+            return GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)").GetComponent<MenuStateController>();
+        }
 
         public static IEnumerator GetElements()
         {
