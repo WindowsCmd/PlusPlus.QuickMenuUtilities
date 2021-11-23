@@ -20,9 +20,11 @@ namespace QMUtils
 
         public Tab(Transform parent, string name, string toolTip, Sprite icon = null)
         {
-            root = UnityEngine.Object.Instantiate<GameObject>(UIElements.quickMenuBase, parent);
+            root = UnityEngine.Object.Instantiate<GameObject>(UIElements.menuTabBase, parent);
             root.name = name + "_quickMenuUtils";
             tab = root.gameObject.GetComponent<MenuTab>();
+            tab.field_Private_MenuStateController_0 = UIElements.getMenuController();
+            tab.field_Public_String_0 = name;
             image = root.transform.Find("Icon").GetComponent<Image>();
             image.sprite = icon;
             image.overrideSprite = icon;

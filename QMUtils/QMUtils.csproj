@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <Configurations>Debug;Release;DebugWithVRC</Configurations>
-    <BaseOutputPath>C:\Program Files (x86)\Steam\steamapps\common\VRChat\Mods</BaseOutputPath>
+    <BaseOutputPath></BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>

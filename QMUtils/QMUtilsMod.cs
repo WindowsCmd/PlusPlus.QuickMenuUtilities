@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Linq;
+using System.Collections;
+using System.Reflection;
 using System.Runtime;
 using MelonLoader;
 
 [assembly: MelonGame("VRChat", "VRChat")]
-[assembly: MelonInfo(typeof(QMUtils.QMUtilsMod), "QuickMenuUtils", "0.0.1", "Astrid")]
+[assembly: MelonInfo(typeof(QMUtils.QMUtilsMod), "QuickMenuUtilities", "0.0.2", "Astrid")]
 [assembly: MelonColor(ConsoleColor.Red)]
 
 namespace QMUtils
@@ -12,6 +14,7 @@ namespace QMUtils
     public class QMUtilsMod : MelonMod
     {
         public bool usingTestingMode;
+        public bool isInitalized = false;
 
         public override void OnApplicationStart()
         {
@@ -19,28 +22,58 @@ namespace QMUtils
             string[] cmdArgs = Environment.GetCommandLineArgs();
 
             MelonLogger.Msg("QuickMenuUtils Starting..");
+            MelonLogger.Msg("QMU is still in early alpha! if you see any bugs please report them here: https://qmu.squadw.xyz/bugs");
 
             if (cmdArgs.Contains("--quickMenu.testingMode"))
             {
                 usingTestingMode = true;
-                MelonLogger.Msg("Quick menu utils has started in developer debugging mode (*^_^*)");
+                MelonLogger.Msg("QMU has started in developer debugging mode (*^_^*)");
             }
+
+            MelonCoroutines.Start(GetAssembly());
+        }
+
+        private void OnVRCUiManagerInit()
+        {
+            MelonLogger.Msg("Ui Initalized");
+            MelonCoroutines.Start(UIElements.GetElements());
+        }
+
+        private IEnumerator GetAssembly()
+        {
+            Assembly assembly;
+
+            while(true)
+            {
+                assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(assembly_ => assembly_.GetName().Name == "Assembly-CSharp");
+                if (assembly == null)
+                    yield return null;
+                else break;
+            }
+
+            MelonCoroutines.Start(VRCUIManagerInit(assembly));
+        }
+
+        private IEnumerator VRCUIManagerInit(Assembly assemblyCSharp)
+        {
+            Type vrcUIManager = assemblyCSharp.GetType("VRCUiManager");
+            PropertyInfo uiManagerSingleton = vrcUIManager.GetProperties().First(prop_info => prop_info.PropertyType == vrcUIManager);
+            while (uiManagerSingleton.GetValue(null) == null) yield return null;
+            OnVRCUiManagerInit();
         }
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
         {
-            MelonCoroutines.Start(UIElements.GetElements());
          
             if (usingTestingMode == true)
             {
-                if(buildIndex != -1)
-                {
-                    MelonLogger.Msg("aaaaa fuck");
-                    
-                    MelonLogger.Msg(UIElements.quickMenuBase.name);
-                    new MenuPage("mainTestingPage", "uwu");
-                    new Tab(UIElements.quickMenuBase.transform.parent, "uwu", "uwu");
-                }
+                if (buildIndex != -1)
+                    return;
+
+                MelonLogger.Msg("We are loaded into a scene");
+                MelonLogger.Msg("QuickMenuBase Name: " + UIElements.quickMenuBase.name);
+                new MenuPage("debugTools", "uwu");
+                new Tab(UIElements.menuTabBase.transform.parent, "DebugMenu", "QMU Debugging menu");
             }
         }
     }
