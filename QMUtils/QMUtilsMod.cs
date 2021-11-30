@@ -69,9 +69,7 @@ namespace QMUtils
             {
                 if (buildIndex != -1)
                     return;
-
-                MelonLogger.Msg("We are loaded into a scene");
-                MelonLogger.Msg("QuickMenuBase Name: " + UIElements.quickMenuBase.name);
+                
                 new MenuPage("debugTools", "uwu");
                 new Tab(UIElements.menuTabBase.transform.parent, "DebugMenu", "QMU Debugging menu");
             }

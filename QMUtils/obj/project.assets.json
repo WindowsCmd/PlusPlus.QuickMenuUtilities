@@ -8,19 +8,24 @@
     ".NETFramework,Version=v4.8": []
   },
   "packageFolders": {
-    "C:\\Users\\massa\\.nuget\\packages\\": {}
+    "C:\\Users\\astd\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\massa\\Documents\\GitHub\\PlusPlus.QuickMenuUtilities\\QMUtils\\QMUtils.csproj",
+      "projectUniqueName": "C:\\Users\\astd\\Documents\\GitHub\\PlusPlus.QuickMenuUtilities\\QMUtils\\QMUtils.csproj",
       "projectName": "QMUtils",
-      "projectPath": "C:\\Users\\massa\\Documents\\GitHub\\PlusPlus.QuickMenuUtilities\\QMUtils\\QMUtils.csproj",
-      "packagesPath": "C:\\Users\\massa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\massa\\Documents\\GitHub\\PlusPlus.QuickMenuUtilities\\QMUtils\\obj\\",
+      "projectPath": "C:\\Users\\astd\\Documents\\GitHub\\PlusPlus.QuickMenuUtilities\\QMUtils\\QMUtils.csproj",
+      "packagesPath": "C:\\Users\\astd\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\astd\\Documents\\GitHub\\PlusPlus.QuickMenuUtilities\\QMUtils\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\massa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\astd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -45,7 +50,7 @@
     "frameworks": {
       "net48": {
         "targetAlias": "net48",
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

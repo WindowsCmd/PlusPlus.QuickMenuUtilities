@@ -14,29 +14,28 @@ namespace QMUtils
     public class MenuPage
     {
         UIPage page;
-        
-        GameObject basePageGameObject;
-        Transform pageContent;
-        string pageName;
-        string title;
-        Texture2D icon;
-        TextMeshProUGUI pageTitle;
+        public GameObject gameObject { get; private set; }
+        public Transform pageContent { get; set; }
+        public string pageName;
+        public string title;
+        public Texture2D icon { get; private set; }
+        public TextMeshProUGUI pageTitle { get; private set; }
 
         public MenuPage(string name, string title)
         {
-            basePageGameObject = UnityEngine.Object.Instantiate<GameObject>(UIElements.quickMenuBase, UIElements.quickMenuBase.transform.parent);
+            gameObject = UnityEngine.Object.Instantiate<GameObject>(UIElements.quickMenuBase, UIElements.quickMenuBase.transform.parent);
             pageName = "qmUtils_" + name;
-            basePageGameObject.transform.SetSiblingIndex(5);
-            basePageGameObject.SetActive(false);
-            page = basePageGameObject.AddComponent<UIPage>();
+            gameObject.transform.SetSiblingIndex(5);
+            gameObject.SetActive(false);
+            page = gameObject.AddComponent<UIPage>();
             page.field_Public_String_0 = name;
             page.field_Public_Boolean_1 = true;
             page.field_Private_List_1_UIPage_0 = new Il2CppSystem.Collections.Generic.List<UIPage>();
             page.field_Private_List_1_UIPage_0.Add(page);
             UIElements.getMenuController().field_Private_Dictionary_2_String_UIPage_0.Add(name, page);
 
-            pageContent = basePageGameObject.transform.Find("ScrollRect/Viewport/VerticalLayoutGroup");
-            pageTitle = basePageGameObject.GetComponentInChildren<TextMeshProUGUI>(true);
+            pageContent = gameObject.transform.Find("ScrollRect/Viewport/VerticalLayoutGroup");
+            pageTitle = gameObject.GetComponentInChildren<TextMeshProUGUI>(true);
             pageTitle.text = title; 
         }
     }
