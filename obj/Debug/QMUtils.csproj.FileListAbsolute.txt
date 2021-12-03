@@ -1,0 +1,7 @@
+C:\Users\astd\source\repos\QMUtils\obj\Debug\QMUtils.csproj.AssemblyReference.cache
+C:\Users\astd\source\repos\QMUtils\obj\Debug\QMUtils.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\VRChat\Mods\QMUtils.dll
+C:\Program Files (x86)\Steam\steamapps\common\VRChat\Mods\QMUtils.pdb
+C:\Users\astd\source\repos\QMUtils\obj\Debug\QMUtils.csproj.CopyComplete
+C:\Users\astd\source\repos\QMUtils\obj\Debug\QMUtils.dll
+C:\Users\astd\source\repos\QMUtils\obj\Debug\QMUtils.pdb
