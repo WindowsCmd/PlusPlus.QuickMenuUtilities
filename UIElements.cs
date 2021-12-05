@@ -15,7 +15,10 @@ namespace QMUtils
     public static class UIElements
     {
         public static GameObject quickMenuBase;
+        public static GameObject buttonGroupBase;
+        public static GameObject buttonGroupHeader;
         public static GameObject menuTabBase;
+        public static GameObject singleButtonBase;
 
         internal static MethodInfo _pushPage;
         internal static MethodInfo _removePage;
@@ -31,6 +34,9 @@ namespace QMUtils
 
             quickMenuBase = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/Menu_Dashboard").gameObject;     
             menuTabBase = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/Page_Buttons_QM/HorizontalLayoutGroup/Page_Settings").gameObject;
+            buttonGroupHeader = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/Menu_Dashboard/ScrollRect/Viewport/VerticalLayoutGroup/Header_QuickActions").gameObject;
+            buttonGroupBase = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/Menu_Dashboard/ScrollRect/Viewport/VerticalLayoutGroup/Buttons_QuickActions").gameObject;
+            singleButtonBase = GameObject.Find("UserIntercace").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/Menu_Dashboard/ScrollRect/Viewport/VerticalLayoutGroup/Buttons_QuickActions/Button_GoHome").gameObject;
         }
 
         internal static void UserInterfaceInit()

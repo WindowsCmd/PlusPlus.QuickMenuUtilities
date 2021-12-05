@@ -356,6 +356,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Button.cs" />
+    <Compile Include="ButtonGroup.cs" />
     <Compile Include="MenuPage.cs" />
     <Compile Include="MenuTab.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

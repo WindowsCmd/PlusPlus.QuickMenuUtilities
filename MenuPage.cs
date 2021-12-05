@@ -20,7 +20,6 @@ namespace QMUtils
     {
         UIPage page;
         public GameObject gameObject { get; private set; }
-        public Transform pageContent { get; set; }
         public RectTransform rectTransform { get; private set; }
         public VerticalLayoutGroup verticalLayoutGroup { get; private set; }
         public string pageName { get; private set; }
@@ -28,6 +27,7 @@ namespace QMUtils
         public Texture2D icon { get; private set; }
         public TextMeshProUGUI pageTitle { get; private set; }
         public RectMask2D mask { get; private set; }
+        public Dictionary<string, ButtonGroup> buttonGroups = new Dictionary<string, ButtonGroup>();
 
         /// <summary>
         /// A new quick menu page
@@ -50,7 +50,6 @@ namespace QMUtils
 
             for (int i = verticalLayoutGroup.rectTransform.childCount - 1; i >= 0; i--)
             {
-                MelonLogger.Msg("Destroyed Child " + i);
                 GameObject.Destroy(verticalLayoutGroup.transform.GetChild(i).gameObject);
             }
 
@@ -71,6 +70,13 @@ namespace QMUtils
             pageTitle.text = title;
 
         }
+
+        public ButtonGroup AddButtonGroup(string title)
+        {
+            ButtonGroup newButtonGroup = new ButtonGroup(title, this.verticalLayoutGroup.transform);
+            buttonGroups.Add(title, newButtonGroup);
+            return newButtonGroup;
+        } 
     }
 }
  
