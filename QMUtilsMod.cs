@@ -70,11 +70,14 @@ namespace QMUtils
                 if (buildIndex != -1)
                     return;
 
-                MenuPage testPage = new MenuPage("debugTools", "QMU Debugging menu V0.0.2");
+                MenuPage testPage = new MenuPage("debugTools", "++ Debug Tools");
                 new Tab(UIElements.menuTabBase.transform.parent, "debugTools", "QMU Debugging menu V0.0.2");
 
-                testPage.AddButtonGroup("uwu");
-                testPage.buttonGroups["uwu"].AddSimpleButton("Cool button", () => { MelonLogger.Msg("Clicked button");  }, "Test tool tip shit");
+                ButtonGroup buttonGroup = testPage.AddButtonGroup("uwu");
+
+                SimpleButton button = new SimpleButton("UwU", buttonGroup.gameObject.transform, delegate() { MelonLogger.Msg("Clicked debug button "); }, "Test tool tip");
+
+                MelonLogger.Msg($"Button Active: {button.gameObject.active} Button Name: {button.gameObject.name} Button Position: {button.gameObject.transform.position}");
             }
         }
     }

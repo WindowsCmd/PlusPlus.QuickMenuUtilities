@@ -10,3 +10,5 @@ C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\obj\Debug\QMUtils.csp
 C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\obj\Debug\QMUtils.csproj.CopyComplete
 C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\obj\Debug\QMUtils.dll
 C:\Users\astd\Documents\GitHub\PlusPlus.QuickMenuUtilities\obj\Debug\QMUtils.pdb
+D:\SteamLibrary\steamapps\common\VRChat\Mods\QMUtils.dll
+D:\SteamLibrary\steamapps\common\VRChat\Mods\QMUtils.pdb
