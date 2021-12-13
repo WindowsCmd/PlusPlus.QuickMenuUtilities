@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>D:\SteamLibrary\steamapps\common\VRChat\VRChat.exe</StartProgram>
+    <StartProgram>C:\Program Files %28x86%29\Steam\steamapps\common\VRChat\VRChat.exe</StartProgram>
     <StartArguments>--no-vr --quickMenu.testingMode --melonloader.debug --quitfix</StartArguments>
     <StartWorkingDirectory>C:\Program Files %28x86%29\Steam\steamapps\common\VRChat\Mods\</StartWorkingDirectory>
   </PropertyGroup>

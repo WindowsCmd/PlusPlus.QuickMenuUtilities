@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ 
+    QuickMenuUtils 
+    Written by Astrid#8008 for PlusPlus (da best client eber)
+    Made with lots nd lots of <3
+    
+    https://vrcplus.xyz/about
+*/
+
+using System;
 using System.Linq;
 using System.Collections;
 using System.Reflection;
@@ -6,7 +15,7 @@ using System.Runtime;
 using MelonLoader;
 
 [assembly: MelonGame("VRChat", "VRChat")]
-[assembly: MelonInfo(typeof(QMUtils.QMUtilsMod), "QuickMenuUtilities", "0.0.2", "Astrid")]
+[assembly: MelonInfo(typeof(QMUtils.QMUtilsMod), "QuickMenuUtilities", "0.1.4", "Astrid")]
 [assembly: MelonColor(ConsoleColor.Red)]
 
 namespace QMUtils
@@ -15,6 +24,8 @@ namespace QMUtils
     {
         public bool usingTestingMode;
         public bool isInitalized = false;
+        public string QuickMenuModVersion = "0.1.4";
+        public string noteForDecompilers = "If you want to know how we did this, or if your interested in creating things for vrchat work for us! https://vrcplus.xyz/jobs";
 
         public override void OnApplicationStart()
         {
@@ -37,6 +48,7 @@ namespace QMUtils
         {
             MelonLogger.Msg("Ui Initalized");
             MelonCoroutines.Start(UIElements.GetElements());
+            UIElements.UserInterfaceInit();
         }
 
         private IEnumerator GetAssembly()
@@ -71,11 +83,19 @@ namespace QMUtils
                     return;
 
                 MenuPage testPage = new MenuPage("debugTools", "++ Debug Tools");
+
+                MenuPage testSubMenu = new MenuPage("debugSubmenu", "Submenu", false, true);
+
                 new Tab(UIElements.menuTabBase.transform.parent, "debugTools", "QMU Debugging menu V0.0.2");
 
                 ButtonGroup buttonGroup = testPage.AddButtonGroup("uwu");
 
-                SimpleButton button = new SimpleButton("UwU", buttonGroup.gameObject.transform, delegate() { MelonLogger.Msg("Clicked debug button "); }, "Test tool tip");
+                SimpleButton button = new SimpleButton("Open test submenu", buttonGroup.gameObject.transform, delegate()
+                {
+                    UIElements.OpenSubMenu(testPage.page, testSubMenu.page);
+                }, "Test tool tip");
+
+                
 
                 MelonLogger.Msg($"Button Active: {button.gameObject.active} Button Name: {button.gameObject.name} Button Position: {button.gameObject.transform.position}");
             }

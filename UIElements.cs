@@ -45,15 +45,19 @@ namespace QMUtils
 
             _pushPage = pageMethods.First(method => CheckMethod(method, "Add"));
             _removePage = pageMethods.First(method => method != _pushPage);
+
+            foreach(var method in pageMethods)
+            {
+
+                CheckMethodForDebugUseage(method);
+            }
         }
 
         internal static bool CheckMethod(MethodBase method, string methodName)
         {
             foreach (XrefInstance instance in XrefScanner.XrefScan(method))
             {
-                MethodBase resolved = instance.TryResolve();
-
-                if (instance.Type == XrefType.Method && resolved.Name.Contains(methodName))
+                if (instance.Type == XrefType.Method && instance.TryResolve() != null && instance.TryResolve().Name.Contains(methodName))
                 {
                     return true;
                 } 
@@ -62,9 +66,21 @@ namespace QMUtils
             return false;
         }
 
-        public static void GoToMenu(UIPage root, UIPage page)
+        internal static void CheckMethodForDebugUseage(MethodBase method)
         {
-            
+            foreach(XrefInstance instance in XrefScanner.XrefScan(method))
+            {
+                if(instance.Type == XrefType.Method && instance.TryResolve() != null)
+                {
+                    MelonLogger.Msg($"Heres your method that you wanted to debug: Name: {instance.TryResolve().Name} Params: {instance.TryResolve().GetParameters()}");
+                }
+            }
+        }
+
+        public static void OpenSubMenu(UIPage root, UIPage page)
+        {
+            _pushPage.Invoke(root, new object[1] { page });
+            _pushPage.Invoke(root, new object[1] { page });
         }
     }
 }
