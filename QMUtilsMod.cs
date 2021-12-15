@@ -77,27 +77,35 @@ namespace QMUtils
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
         {
          
-            if (usingTestingMode == true)
+            if (usingTestingMode == true && isInitalized == false)
             {
                 if (buildIndex != -1)
                     return;
 
                 MenuPage testPage = new MenuPage("debugTools", "++ Debug Tools");
 
-                MenuPage testSubMenu = new MenuPage("debugSubmenu", "Submenu", false, true);
+                MenuPage testSubMenu = new MenuPage("debugSubmenu", "Submenu");
 
                 new Tab(UIElements.menuTabBase.transform.parent, "debugTools", "QMU Debugging menu V0.0.2");
 
                 ButtonGroup buttonGroup = testPage.AddButtonGroup("uwu");
 
-                SimpleButton button = new SimpleButton("Open test submenu", buttonGroup.gameObject.transform, delegate()
+                SimpleButton button = new SimpleButton("Open test submenu", buttonGroup.gameObject.transform, delegate ()
                 {
-                    UIElements.OpenSubMenu(testPage.page, testSubMenu.page);
+                    testSubMenu.Open();
+
                 }, "Test tool tip");
 
-                
+                /* SimpleButton testSubMenuButton = new SimpleButton("Test", subMenuButtonGroup.gameObject.transform, delegate ()
+                {
+                    MelonLogger.Msg("Here!");
+                    \
+                }," tool tip"); */
 
+                
                 MelonLogger.Msg($"Button Active: {button.gameObject.active} Button Name: {button.gameObject.name} Button Position: {button.gameObject.transform.position}");
+
+                isInitalized = true;
             }
         }
     }

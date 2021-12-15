@@ -8,6 +8,7 @@ using VRC.UI;
 using VRC.UI.Elements;
 using VRC.UI.Elements.Tooltips;
 using VRC.UI.Elements.Menus;
+using UnhollowerBaseLib;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -49,25 +50,26 @@ namespace QMUtils
                 gameObject.SetActive(false);
                 gameObject.transform.SetSiblingIndex(5);
 
-                GameObject.Destroy(gameObject.GetComponent<UIPage>());
+                GameObject.DestroyImmediate(gameObject.GetComponent<LaunchPadQMMenu>());
 
+                page = gameObject.AddComponent<UIPage>();
+                page.field_Public_String_0 = name;
+                page.field_Private_MenuStateController_0 = UIElements.getMenuController();
+                page.field_Private_List_1_UIPage_0 = new Il2CppSystem.Collections.Generic.List<UIPage>();
+                page.field_Private_List_1_UIPage_0.Add(page);
+
+                UIElements.getMenuController().field_Private_Dictionary_2_String_UIPage_0.Add(name, page);
+     
                 GameObject.Destroy(rectTransform.Find("Header_H1/RightItemContainer/Button_QM_Expand").gameObject);
 
                 verticalLayoutGroup = rectTransform.Find("ScrollRect/Viewport/VerticalLayoutGroup").GetComponent<VerticalLayoutGroup>();
 
                 for (int i = verticalLayoutGroup.rectTransform.childCount - 1; i >= 0; i--)
                 {
-                    GameObject.Destroy(verticalLayoutGroup.transform.GetChild(i).gameObject);
+                    GameObject.DestroyImmediate(verticalLayoutGroup.transform.GetChild(i).gameObject);
                 }
 
-                page = gameObject.AddComponent<UIPage>();
-                page.field_Public_String_0 = name;
-                page.field_Public_Boolean_1 = true;
-                page.field_Private_MenuStateController_0 = UIElements.getMenuController();
-                page.field_Private_List_1_UIPage_0 = new Il2CppSystem.Collections.Generic.List<UIPage>();
-                page.field_Private_List_1_UIPage_0.Add(page);
-
-                UIElements.getMenuController().field_Private_Dictionary_2_String_UIPage_0.Add(name, page);
+                verticalLayoutGroup.childControlHeight = false;
 
                 if (root)
                 {
@@ -84,7 +86,13 @@ namespace QMUtils
                     backButton.SetActive(true);
                     backButton.GetComponentInChildren<Button>().onClick.AddListener((Action) delegate ()
                     {
-                        page.Method_Protected_Virtual_New_Void_0();
+                        if (isRootPage)
+                        {
+                            UIElements.getMenuController().Method_Public_Void_String_Boolean_0("QuickMenuDashboard");
+                        } else
+                        {
+                            page.Method_Protected_Virtual_New_Void_0();
+                        }                 
                     });
                 }
 
@@ -104,7 +112,7 @@ namespace QMUtils
 
         public void Open()
         {
-            UIElements.getMenuController().Method_Public_Void_String_UIContext_Boolean_0(page.field_Public_String_0, null, false);
+            UIElements.getMenuController().Method_Public_Void_String_UIContext_Boolean_0(page.field_Public_String_0);
         }
 
         public ButtonGroup AddButtonGroup(string title)

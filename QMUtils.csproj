@@ -365,6 +365,7 @@
     <Compile Include="MenuTab.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QMUtilsMod.cs" />
+    <Compile Include="SubMenu.cs" />
     <Compile Include="UIElements.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

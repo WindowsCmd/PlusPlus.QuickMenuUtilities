@@ -14,13 +14,17 @@ namespace QMUtils
 {
     public static class UIElements
     {
+        public static GameObject menuBase;
         public static GameObject quickMenuBase;
         public static GameObject buttonGroupBase;
         public static GameObject buttonGroupHeader;
         public static GameObject menuTabBase;
         public static GameObject singleButtonBase;
+        public static GameObject subMenuBase;
 
+        [Obsolete("This is depricated, please use the MenuStateController functions")]
         internal static MethodInfo _pushPage;
+        [Obsolete("This is depricated, please use the MenuStateController functions")]
         internal static MethodInfo _removePage;
 
         public static MenuStateController getMenuController() {
@@ -31,12 +35,13 @@ namespace QMUtils
         {
             while (GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/Menu_Dashboard/ScrollRect/Viewport/VerticalLayoutGroup/Buttons_QuickActions/") == null)
                 yield return new WaitForEndOfFrame();
-
+            menuBase = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/").gameObject;
             quickMenuBase = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/Menu_Dashboard").gameObject;     
             menuTabBase = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/Page_Buttons_QM/HorizontalLayoutGroup/Page_Settings").gameObject;
             buttonGroupHeader = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/Menu_Dashboard/ScrollRect/Viewport/VerticalLayoutGroup/Header_QuickActions").gameObject;
             buttonGroupBase = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/Menu_Dashboard/ScrollRect/Viewport/VerticalLayoutGroup/Buttons_QuickActions").gameObject;
             singleButtonBase = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/Menu_Dashboard/ScrollRect/Viewport/VerticalLayoutGroup/Buttons_QuickActions/Button_Respawn").gameObject;
+            subMenuBase = GameObject.Find("UserInterface").transform.Find("Canvas_QuickMenu(Clone)/Container/Window/QMParent/Menu_QM_Report_Details/").gameObject;
         }
 
         internal static void UserInterfaceInit()
@@ -77,10 +82,5 @@ namespace QMUtils
             }
         }
 
-        public static void OpenSubMenu(UIPage root, UIPage page)
-        {
-            _pushPage.Invoke(root, new object[1] { page });
-            _pushPage.Invoke(root, new object[1] { page });
-        }
     }
 }
